@@ -259,3 +259,11 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+###############
+# BusinessApp #
+###############
+App_Data/RestorePoints/
+App_Data/Logs/
+App_Data/UploadTemp/
+App_Data/Import/
