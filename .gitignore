@@ -263,7 +263,7 @@ __pycache__/
 ###############
 # BusinessApp #
 ###############
-App_Data/RestorePoints/
-App_Data/Logs/
-App_Data/UploadTemp/
-App_Data/Import/
+RestorePoints/
+Logs/
+UploadTemp/
+Import/
