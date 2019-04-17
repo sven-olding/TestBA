@@ -1,0 +1,1096 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{16FEB07E-573B-4937-A679-69E4A6CEF50D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestBA</RootNamespace>
+    <AssemblyName>TestBA</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiveUp.Net, Version=2.1.41.0, Culture=neutral, PublicKeyToken=2ff270728258992b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Common, Version=2.1.41.0, Culture=neutral, PublicKeyToken=6cceae6a4844c51b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Dns, Version=2.1.41.0, Culture=neutral, PublicKeyToken=6fc67824e0089991, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Dns.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Groupware, Version=2.1.41.0, Culture=neutral, PublicKeyToken=db51b95d57ebfe25, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Groupware.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Imap4, Version=2.1.41.0, Culture=neutral, PublicKeyToken=9d424b1770e92b68, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Imap4.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Mail, Version=2.1.41.0, Culture=neutral, PublicKeyToken=851b9e39ef2572fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Nntp, Version=2.1.41.0, Culture=neutral, PublicKeyToken=01416978360a49a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Nntp.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.OpenPGP, Version=2.1.41.0, Culture=neutral, PublicKeyToken=0e094b86584219e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.OpenPGP.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Pop3, Version=2.1.41.0, Culture=neutral, PublicKeyToken=962567372c07b9fe, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Pop3.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.Smtp, Version=2.1.41.0, Culture=neutral, PublicKeyToken=366752d00f09ae34, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.Smtp.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveUp.Net.WhoIs, Version=2.1.41.0, Culture=neutral, PublicKeyToken=6b9afb81c1de5ed4, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailSystem.Net-trunk.2.1.41\lib\net40\ActiveUp.Net.WhoIs.dll</HintPath>
+    </Reference>
+    <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\AngleSharp.0.9.10\lib\net45\AngleSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="BA, Version=0.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BA.Core.0.5.2\lib\BA.dll</HintPath>
+    </Reference>
+    <Reference Include="BA.Designer, Version=0.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BA.Designer.0.5.2\lib\BA.Designer.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.4.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.4\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.2.16.3.0\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v18.1.Core, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v18.1.Web, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v18.1.Web.Mvc5, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v18.1.Web.WebForms, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Map.v18.1.Core, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v18.1.Core, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v18.1.Core, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v18.1.Core, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.SpellChecker.v18.1.Core, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Spreadsheet.v18.1.Core, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.TreeMap.v18.1.Core, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxRichEdit.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxScheduler.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxSpellChecker.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxSpreadsheet.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxTreeList.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.Mvc5.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.Resources.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.1.Web, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v18.1.Core, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v18.1.Presets, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v18.1.Win, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraMap.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.1.Web, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.1.Web.WebForms, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v18.1.Core, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeMap.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Glimpse.AspNet, Version=1.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.AspNet.1.9.2\lib\net45\Glimpse.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Core, Version=1.8.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.1.8.6\lib\net45\Glimpse.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Mvc5, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.NLog, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.NLog.1.7.1\lib\net45\Glimpse.NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Independentsoft.Msg, Version=2.0.350.19436, Culture=neutral, PublicKeyToken=76be97fe952f1ec7, processorArchitecture=MSIL">
+      <HintPath>..\packages\BA.Core.0.5.2\lib\Independentsoft.Msg.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.8.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.8.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.8.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.8.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.8.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.8.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.OData, Version=7.1.0.21120, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.OData.7.1.0\lib\net45\Microsoft.AspNet.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.4\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=2.10.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.2.10.0\lib\netstandard1.3\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.2.10.0\lib\netstandard1.3\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Scripting, Version=2.10.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.Scripting.2.10.0\lib\netstandard1.3\Microsoft.CodeAnalysis.CSharp.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Scripting, Version=2.10.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Scripting.Common.2.10.0\lib\netstandard1.3\Microsoft.CodeAnalysis.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Exchange.WebServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Exchange.WebServices.2.2\lib\40\Microsoft.Exchange.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices.Auth, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Exchange.WebServices.2.2\lib\40\Microsoft.Exchange.WebServices.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.2.1.1\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Extensions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Model.Extensions.2.0.1459.0\lib\Microsoft.IdentityModel.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.5.3.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.5.3.0\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocol.Extensions, Version=1.0.40306.1554, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocol.Extensions.1.0.4.403061554\lib\net45\Microsoft.IdentityModel.Protocol.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.5.3.0\lib\net461\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.WsFederation, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.WsFederation.5.3.0\lib\net461\Microsoft.IdentityModel.Protocols.WsFederation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.3.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens.Saml, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.Saml.5.3.0\lib\net461\Microsoft.IdentityModel.Tokens.Saml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Xml, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Xml.5.3.0\lib\net461\Microsoft.IdentityModel.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Core, Version=7.5.2.21120, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.OData.Core.7.5.2\lib\portable-net45+win8+wpa81\Microsoft.OData.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm, Version=7.5.2.21120, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.OData.Edm.7.5.2\lib\portable-net45+win8+wpa81\Microsoft.OData.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.WsFederation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.WsFederation.4.0.0\lib\net451\Microsoft.Owin.Security.WsFederation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Spatial, Version=7.5.2.21120, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Spatial.7.5.2\lib\portable-net45+win8+wpa81\Microsoft.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.3.2.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="MohammadYounes.Owin.Security.MixedAuth, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OWIN-MixedAuth.1.1.0\lib\net45\MohammadYounes.Owin.Security.MixedAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq, Version=3.0.0.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.3.0.0\lib\net451\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.3.1.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.3.1\lib\net45\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common.WebHost, Version=3.3.1.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.WebHost.3.3.1\lib\net45\Ninject.Web.Common.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.3.0\lib\net45\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.11\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PortCMIS, Version=0.3.0.0, Culture=neutral, PublicKeyToken=2b5bee6b68620282, processorArchitecture=MSIL">
+      <HintPath>..\packages\PortCMIS.0.3.0\lib\netstandard1.1\PortCMIS.dll</HintPath>
+    </Reference>
+    <Reference Include="PreMailer.Net, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PreMailer.Net.2.0.0\lib\netstandard2.0\PreMailer.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorGenerator.Mvc.2.4.9\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Svg, Version=2.2.1.39233, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Svg.2.3.0\lib\net35\Svg.dll</HintPath>
+    </Reference>
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.1\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.FileVersionInfo.4.3.0\lib\net46\System.Diagnostics.FileVersionInfo.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.StackTrace.4.3.0\lib\net46\System.Diagnostics.StackTrace.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.3.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.6.0\lib\netstandard2.0\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.5.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Thread.4.3.0\lib\net46\System.Threading.Thread.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.6\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.1\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.4.3.0\lib\net46\System.Xml.XPath.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.XDocument.4.3.0\lib\net46\System.Xml.XPath.XDocument.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityModel.Owin.BasicAuthentication, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Thinktecture.IdentityModel.Owin.BasicAuthentication.1.0.1\lib\net45\Thinktecture.IdentityModel.Owin.BasicAuthentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Ude, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UDE.CSharp.1.1.0\lib\Ude.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\LicenseKey\license.xml" />
+    <Content Include="content\toastr.css" />
+    <Content Include="content\toastr.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="scripts\history.js\amplify.store.js" />
+    <Content Include="scripts\history.js\history.adapter.dojo.js" />
+    <Content Include="scripts\history.js\history.adapter.jquery.js" />
+    <Content Include="scripts\history.js\history.adapter.mootools.js" />
+    <Content Include="scripts\history.js\history.adapter.prototype.js" />
+    <Content Include="scripts\history.js\history.adapter.yui.js" />
+    <Content Include="scripts\history.js\history.adapter.zepto.js" />
+    <Content Include="scripts\history.js\history.html4.js" />
+    <Content Include="scripts\history.js\history.js" />
+    <Content Include="scripts\history.js\json2.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content\toastr.scss" />
+    <Content Include="content\toastr.less" />
+    <Content Include="NuGet.config" />
+    <Content Include="App_Data\Import\dummy" />
+    <Content Include="App_Data\Logs\dummy" />
+    <Content Include="App_Data\RestorePoints\dummy" />
+    <Content Include="App_Data\UploadTemp\dummy" />
+    <None Include="scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="scripts\jquery-3.3.1.js" />
+    <Content Include="scripts\jquery-3.3.1.min.js" />
+    <Content Include="scripts\jquery-3.3.1.slim.js" />
+    <Content Include="scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="scripts\jquery.signalR-2.4.0.js" />
+    <Content Include="scripts\jquery.signalR-2.4.0.min.js" />
+    <Content Include="scripts\MicrosoftAjax.debug.js" />
+    <Content Include="scripts\MicrosoftAjax.js" />
+    <Content Include="scripts\pdf.js\build\pdf.js" />
+    <Content Include="scripts\pdf.js\build\pdf.worker.js" />
+    <Content Include="scripts\pdf.js\web\debugger.js" />
+    <Content Include="scripts\pdf.js\web\images\annotation-check.svg" />
+    <Content Include="scripts\pdf.js\web\images\annotation-comment.svg" />
+    <Content Include="scripts\pdf.js\web\images\annotation-help.svg" />
+    <Content Include="scripts\pdf.js\web\images\annotation-insert.svg" />
+    <Content Include="scripts\pdf.js\web\images\annotation-key.svg" />
+    <Content Include="scripts\pdf.js\web\images\annotation-newparagraph.svg" />
+    <Content Include="scripts\pdf.js\web\images\annotation-noicon.svg" />
+    <Content Include="scripts\pdf.js\web\images\annotation-note.svg" />
+    <Content Include="scripts\pdf.js\web\images\annotation-paragraph.svg" />
+    <Content Include="scripts\pdf.js\web\images\findbarButton-next%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\findbarButton-next-rtl%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\findbarButton-next-rtl.png" />
+    <Content Include="scripts\pdf.js\web\images\findbarButton-next.png" />
+    <Content Include="scripts\pdf.js\web\images\findbarButton-previous%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\findbarButton-previous-rtl%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\findbarButton-previous-rtl.png" />
+    <Content Include="scripts\pdf.js\web\images\findbarButton-previous.png" />
+    <Content Include="scripts\pdf.js\web\images\grab.cur" />
+    <Content Include="scripts\pdf.js\web\images\grabbing.cur" />
+    <Content Include="scripts\pdf.js\web\images\loading-icon.gif" />
+    <Content Include="scripts\pdf.js\web\images\loading-small%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\loading-small.png" />
+    <Content Include="scripts\pdf.js\web\images\secondaryToolbarButton-documentProperties%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\secondaryToolbarButton-documentProperties.png" />
+    <Content Include="scripts\pdf.js\web\images\secondaryToolbarButton-firstPage%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\secondaryToolbarButton-firstPage.png" />
+    <Content Include="scripts\pdf.js\web\images\secondaryToolbarButton-handTool%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\secondaryToolbarButton-handTool.png" />
+    <Content Include="scripts\pdf.js\web\images\secondaryToolbarButton-lastPage%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\secondaryToolbarButton-lastPage.png" />
+    <Content Include="scripts\pdf.js\web\images\secondaryToolbarButton-rotateCcw%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\secondaryToolbarButton-rotateCcw.png" />
+    <Content Include="scripts\pdf.js\web\images\secondaryToolbarButton-rotateCw%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\secondaryToolbarButton-rotateCw.png" />
+    <Content Include="scripts\pdf.js\web\images\secondaryToolbarButton-selectTool%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\secondaryToolbarButton-selectTool.png" />
+    <Content Include="scripts\pdf.js\web\images\shadow.png" />
+    <Content Include="scripts\pdf.js\web\images\texture.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-bookmark%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-bookmark.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-download%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-download.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-menuArrows%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-menuArrows.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-openFile%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-openFile.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-pageDown%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-pageDown-rtl%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-pageDown-rtl.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-pageDown.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-pageUp%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-pageUp-rtl%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-pageUp-rtl.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-pageUp.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-presentationMode%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-presentationMode.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-print%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-print.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-search%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-search.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-secondaryToolbarToggle%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-secondaryToolbarToggle-rtl%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-secondaryToolbarToggle-rtl.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-secondaryToolbarToggle.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-sidebarToggle%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-sidebarToggle-rtl%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-sidebarToggle-rtl.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-sidebarToggle.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-viewAttachments%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-viewAttachments.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-viewOutline%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-viewOutline-rtl%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-viewOutline-rtl.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-viewOutline.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-viewThumbnail%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-viewThumbnail.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-zoomIn%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-zoomIn.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-zoomOut%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\toolbarButton-zoomOut.png" />
+    <Content Include="scripts\pdf.js\web\images\treeitem-collapsed%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\treeitem-collapsed-rtl%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\treeitem-collapsed-rtl.png" />
+    <Content Include="scripts\pdf.js\web\images\treeitem-collapsed.png" />
+    <Content Include="scripts\pdf.js\web\images\treeitem-expanded%402x.png" />
+    <Content Include="scripts\pdf.js\web\images\treeitem-expanded.png" />
+    <Content Include="scripts\pdf.js\web\viewer.css" />
+    <Content Include="scripts\pdf.js\web\viewer.html" />
+    <Content Include="scripts\pdf.js\web\viewer.js" />
+    <Content Include="scripts\toastr.js" />
+    <Content Include="scripts\toastr.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="scripts\pdf.js\web\viewer.js.map" />
+    <Content Include="scripts\pdf.js\web\locale\zu\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\zh-TW\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\zh-CN\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\xh\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\wo\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\vi\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ur\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\uk\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\tr\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\tn\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\tl\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\th\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\te\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ta\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ta-LK\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\sw\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\sv-SE\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\sr\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\sq\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\son\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\sl\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\sk\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\si\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\sah\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\rw\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ru\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ro\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\rm\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\pt-PT\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\pt-BR\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\pl\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\pa-IN\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\or\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\oc\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\nso\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\nn-NO\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\nl\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\nb-NO\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\my\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ms\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\mr\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\mn\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ml\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\mk\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\mai\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\lv\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\lt\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\locale.properties" />
+    <Content Include="scripts\pdf.js\web\locale\lij\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\lg\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ku\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ko\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\kn\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\km\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\kk\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ka\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ja\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\it\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\is\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\id\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\hy-AM\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\hu\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\hr\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\hi-IN\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\he\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\gu-IN\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\gl\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\gd\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ga-IE\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\fy-NL\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\fr\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\fi\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ff\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\fa\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\eu\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\et\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\es-MX\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\es-ES\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\es-CL\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\es-AR\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\eo\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\en-ZA\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\en-US\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\en-GB\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\el\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\de\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\da\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\cy\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\cs\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\csb\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ca\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\bs\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\br\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\bn-IN\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\bn-BD\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\bg\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\be\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\az\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\as\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ast\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ar\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\an\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ak\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\af\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\locale\ach\viewer.properties" />
+    <Content Include="scripts\pdf.js\web\compressed.tracemonkey-pldi-09.pdf" />
+    <Content Include="scripts\pdf.js\web\cmaps\WP-Symbol.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniKS-UTF8-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniKS-UTF8-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniKS-UTF32-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniKS-UTF32-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniKS-UTF16-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniKS-UTF16-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniKS-UCS2-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniKS-UCS2-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJISX02132004-UTF32-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJISX02132004-UTF32-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJISX0213-UTF32-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJISX0213-UTF32-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJISPro-UTF8-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJISPro-UCS2-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJISPro-UCS2-HW-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS2004-UTF8-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS2004-UTF8-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS2004-UTF32-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS2004-UTF32-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS2004-UTF16-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS2004-UTF16-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS-UTF8-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS-UTF8-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS-UTF32-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS-UTF32-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS-UTF16-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS-UTF16-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS-UCS2-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS-UCS2-HW-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS-UCS2-HW-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniJIS-UCS2-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniGB-UTF8-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniGB-UTF8-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniGB-UTF32-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniGB-UTF32-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniGB-UTF16-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniGB-UTF16-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniGB-UCS2-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniGB-UCS2-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniCNS-UTF8-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniCNS-UTF8-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniCNS-UTF32-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniCNS-UTF32-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniCNS-UTF16-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniCNS-UTF16-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniCNS-UCS2-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\UniCNS-UCS2-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Roman.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\RKSJ-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\RKSJ-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\NWP-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\NWP-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\LICENSE" />
+    <Content Include="scripts\pdf.js\web\cmaps\KSCpc-EUC-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\KSCpc-EUC-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\KSCms-UHC-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\KSCms-UHC-HW-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\KSCms-UHC-HW-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\KSCms-UHC-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\KSC-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\KSC-Johab-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\KSC-Johab-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\KSC-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\KSC-EUC-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\KSC-EUC-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Katakana.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\HKscs-B5-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\HKscs-B5-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\HKm471-B5-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\HKm471-B5-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\HKm314-B5-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\HKm314-B5-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\HKgccs-B5-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\HKgccs-B5-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\HKdlb-B5-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\HKdlb-B5-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\HKdla-B5-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\HKdla-B5-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Hiragana.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Hankaku.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GBTpc-EUC-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GBTpc-EUC-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GBT-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GBT-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GBT-EUC-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GBT-EUC-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GBpc-EUC-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GBpc-EUC-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GBKp-EUC-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GBKp-EUC-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GBK2K-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GBK2K-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GBK-EUC-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GBK-EUC-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GB-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GB-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GB-EUC-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\GB-EUC-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Ext-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Ext-RKSJ-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Ext-RKSJ-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Ext-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\EUC-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\EUC-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\ETHK-B5-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\ETHK-B5-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\ETenms-B5-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\ETenms-B5-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\ETen-B5-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\ETen-B5-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\CNS2-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\CNS2-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\CNS1-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\CNS1-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\CNS-EUC-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\CNS-EUC-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\B5pc-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\B5pc-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\B5-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\B5-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-Korea1-UCS2.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-Korea1-2.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-Korea1-1.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-Korea1-0.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-Japan1-UCS2.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-Japan1-6.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-Japan1-5.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-Japan1-4.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-Japan1-3.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-Japan1-2.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-Japan1-1.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-Japan1-0.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-GB1-UCS2.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-GB1-5.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-GB1-4.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-GB1-3.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-GB1-2.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-GB1-1.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-GB1-0.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-CNS1-UCS2.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-CNS1-6.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-CNS1-5.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-CNS1-4.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-CNS1-3.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-CNS1-2.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-CNS1-1.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Adobe-CNS1-0.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Add-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Add-RKSJ-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Add-RKSJ-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\Add-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\90pv-RKSJ-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\90pv-RKSJ-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\90msp-RKSJ-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\90msp-RKSJ-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\90ms-RKSJ-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\90ms-RKSJ-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\83pv-RKSJ-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\78ms-RKSJ-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\78ms-RKSJ-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\78-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\78-RKSJ-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\78-RKSJ-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\78-H.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\78-EUC-V.bcmap" />
+    <Content Include="scripts\pdf.js\web\cmaps\78-EUC-H.bcmap" />
+    <Content Include="scripts\pdf.js\LICENSE" />
+    <Content Include="scripts\pdf.js\build\pdf.worker.js.map" />
+    <Content Include="scripts\pdf.js\build\pdf.js.map" />
+    <Content Include="tsconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="scripts\jquery-3.3.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Start\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="scripts\BA\Classes\Guid.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Actions\ActionHandler.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Actions\CommonActions.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Actions\DesignerActions.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Actions\FormActions.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Actions\GridActions.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Actions\PDFActions.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\ActiveDirectoryEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\AttachmentEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\CheckEditEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\ComboBoxEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\ControlEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\CTIEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\DashboardEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\EnumChoiceEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\GridLookupEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\HTMLControlEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\HyperlinkEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\IBANBICControlsEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\ImageControlEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\LogContentSelectorEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\ParentRelatedTypeInTokenboxEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\PartialRefreshEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\PasswordEditEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\PhasesControlEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\RichEditEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\SpinEditEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\SpreadsheetEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\TokenBoxEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Controls\TranslationEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Designer\DesignerManagement.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Dialog\DialogManager.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Dialog\DialogResult.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Dialog\DialogTools.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Dialog\GridDialogEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Dialog\OrmDialogManager.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Form\FormEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Form\FormTools.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Grid\DetailGridEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Grid\EnumGridEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Grid\GridAsControlEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Grid\GridEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Grid\GridProperties.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Grid\GridTools.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\LayoutSystem\FlowLayout.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\LayoutSystem\LayoutBase.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\LayoutSystem\LayoutManager.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Menu\MenuEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\MessageBox.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\AttachmentJSONModel.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\BreadCrumbModel.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\DesignTreelistCallbackModel.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\DialogButtonDefinition.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\DialogDataSelectionClientDataModel.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\FormDialogModel.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\FormHiddenDataModel.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\FormModelProvider.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\ImageControlModel.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\JsonFormResult.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\JsonOpenBehaviorModel.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\KeepAliveResult.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\OpenUrlInWindow.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\PossibleDataSource.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\RefreshGroupModel.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Models\RelatedDataSelectionItemModel.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\PDFManagement.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Ribbon\RibbonEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Ribbon\RibbonTools.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\TabController\Controller.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\TabController\OpenBehavior.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\TabController\OpenBehaviorModel.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\TabController\Tab.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\TabController\TabEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\TabController\TabProperties.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\TabController\TabTools.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Textbox\DataSelectionDialog.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Textbox\DataSelectionDialogEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Textbox\DialogBase.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Textbox\DialogEvents.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Textbox\DialogProperties.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Toast.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\Utils.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\WindowManagement.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\WorkManager\Constants.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\WorkManager\ProcessList.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\WorkManager\ProcessListEntry.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\WorkManager\ProcessListEntryUi.d.ts" />
+    <TypeScriptCompile Include="scripts\BA\Ui\WorkManager\ProcessListUi.d.ts" />
+    <TypeScriptCompile Include="scripts\Extensions.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\devexpress-web\devexpress-web-tests.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\devexpress-web\devexpress-web.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\dragula\dragula.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\history\history.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\toastr\toastr.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.2\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.2\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51964</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/TestBA</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\RazorGenerator.MsBuild.2.5.0\build\RazorGenerator.MsBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\RazorGenerator.MsBuild.2.5.0\build\RazorGenerator.MsBuild.targets'))" />
+    <Error Condition="!Exists('..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets'))" />
+  </Target>
+  <Import Project="..\packages\RazorGenerator.MsBuild.2.5.0\build\RazorGenerator.MsBuild.targets" Condition="Exists('..\packages\RazorGenerator.MsBuild.2.5.0\build\RazorGenerator.MsBuild.targets')" />
+  <Import Project="..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets" Condition="Exists('..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

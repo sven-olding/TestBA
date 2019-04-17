@@ -1,0 +1,15 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "sourceMap": true,
+    "noEmitOnError": true,
+    "declaration": true,
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "target": "ES5",
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "Scripts/**/*"
+  ]
+}
